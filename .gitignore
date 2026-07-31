@@ -1,0 +1,10 @@
+.streamlit/secrets.toml
+.env
+*.key
+__pycache__/
+*.py[cod]
+venv/
+chroma_db/
+*.sqlite3
+.DS_Store
+*.log
