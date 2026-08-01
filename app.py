@@ -6,8 +6,15 @@ st.set_page_config(page_title="Sri Lanka Migration Advisory Agent", page_icon="ð
 st.title("ðŸ§³ Sri Lanka Foreign Employment Advisory Agent")
 st.caption("Ask about agency verification, country legal rules, or remittance planning.")
 
-with st.spinner("Indexing knowledge corpus..."):
-    build_index()
+@st.cache_resource
+def load_index_once():
+    try:
+        build_index()
+    except Exception as e:
+        pass
+
+with st.spinner("Initializing knowledge base..."):
+    load_index_once()
 
 if "history" not in st.session_state:
     st.session_state.history = []
