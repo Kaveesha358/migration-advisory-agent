@@ -172,7 +172,7 @@ The country-requirements and remittance-advisor agents are grounded using a Retr
 
 ## 🌐 Live Demo
 
-**Streamlit App:** `[https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/](https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/)`
+**Streamlit App:**  [https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/](https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/)
 
 
 ---
