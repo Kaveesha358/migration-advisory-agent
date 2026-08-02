@@ -6,6 +6,7 @@ st.set_page_config(page_title="Sri Lanka Migration Advisory Agent", page_icon="ð
 st.title("ðŸ§³ Sri Lanka Foreign Employment Advisory Agent")
 st.caption("Ask about agency verification, country legal rules, or remittance planning.")
 
+
 @st.cache_resource
 def load_index_once():
     try:
