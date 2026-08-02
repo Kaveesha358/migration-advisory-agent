@@ -4,9 +4,7 @@ from chromadb.utils import embedding_functions
 CHROMA_DIR = "chroma_db"
 COLLECTION_NAME = "migration_corpus"
 
-_embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="all-MiniLM-L6-v2"
-)
+_embedding_fn = embedding_functions.ONNXMiniLM_L6_V2()
 
 def get_collection():
     client = chromadb.PersistentClient(path=CHROMA_DIR)
