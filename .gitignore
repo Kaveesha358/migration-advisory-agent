@@ -8,3 +8,8 @@ chroma_db/
 *.sqlite3
 .DS_Store
 *.log
+
+.env
+.streamlit/secrets.toml
+chroma_db/
+__pycache__/

@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 
 def _get_secret(name: str) -> str:
     if hasattr(st, "secrets") and name in st.secrets:
