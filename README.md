@@ -1,4 +1,4 @@
-<# 🧳 Sri Lanka Foreign Employment Advisory Agent
+# 🧳 Sri Lanka Foreign Employment Advisory Agent
 
 A multi-agent AI advisory system that helps Sri Lankan migrant workers and job seekers get reliable guidance on **recruitment agency verification**, **destination-country legal requirements**, and **remittance planning** — built with LangGraph, RAG, and a router → worker → synthesizer → critic pipeline.
 
@@ -172,7 +172,7 @@ The country-requirements and remittance-advisor agents are grounded using a Retr
 
 ## 🌐 Live Demo
 
-**Streamlit App:** `<PASTE YOUR DEPLOYMENT URL HERE>`
+**Streamlit App:** `https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/`
 
 
 ---
