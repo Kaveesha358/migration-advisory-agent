@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from langchain_groq import ChatGroq
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 
 def _get_secret(name: str) -> str:
     if hasattr(st, "secrets") and name in st.secrets:
@@ -17,16 +17,18 @@ def get_router_llm():
 
 def get_synthesis_llm():
     return ChatOpenAI(
-        model="anthropic/claude-3.5-haiku",
+        model="anthropic/claude-haiku-4.5",
         temperature=0.2,
+        max_tokens=2048,
         base_url="https://openrouter.ai/api/v1",
         api_key=_get_secret("OPENROUTER_API_KEY"),
     )
 
 def get_critic_llm():
     return ChatOpenAI(
-        model="anthropic/claude-3.5-haiku",
+        model="anthropic/claude-haiku-4.5",
         temperature=0,
+        max_tokens=2048,
         base_url="https://openrouter.ai/api/v1",
         api_key=_get_secret("OPENROUTER_API_KEY"),
     )
