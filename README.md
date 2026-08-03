@@ -4,7 +4,15 @@ A multi-agent AI advisory system that helps Sri Lankan migrant workers and job s
 
 ---
 
-## 📖 Project Description
+##  Developer Information
+
+**Developer Name:** S.M.K.S De Silva
+**Developer Index:** ITBIN-2313-0020
+**Project:** Sri Lanka Foreign Employment Advisory Agent
+
+---
+
+##  Project Description
 
 Every year, thousands of Sri Lankans seek foreign employment through licensed recruitment agencies, and many fall victim to unregistered or fraudulent agencies, unclear visa/legal requirements, or costly remittance mistakes. This project builds an **AI advisory agent** that answers natural-language questions across three domains:
 
@@ -16,7 +24,7 @@ The system routes each query to the correct specialist agent, synthesizes a comb
 
 ---
 
-## 🏗️ Architecture Diagram
+##  Architecture Diagram
 
 ```mermaid
 flowchart TD
@@ -60,7 +68,7 @@ flowchart TD
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### Prerequisites
 - Python 3.10+
@@ -109,7 +117,7 @@ streamlit run app.py
 
 ---
 
-## 🤖 Model-Choice Comparison Table
+##  Model-Choice Comparison Table
 
 | Role | Model | Provider | Why this model |
 |---|---|---|---|
@@ -118,11 +126,10 @@ streamlit run app.py
 | **Critic** (reflection / quality-control pass) | `anthropic/claude-haiku-4.5` | OpenRouter | Same model reused for consistency of judgment; cheap enough to run a second full pass per query without materially increasing cost, while still being capable of catching missing disclaimers or unverified claims. |
 | **Embeddings** (RAG retrieval) | `all-MiniLM-L6-v2` | Sentence-Transformers (local) | Small, fast, runs locally with no API cost — ideal for chunk-level semantic search over a modest-sized document corpus. |
 
-> **Note:** The project originally targeted `anthropic/claude-3.5-haiku`, which was later retired from OpenRouter's available model list and replaced with `anthropic/claude-haiku-4.5`. `max_tokens` is explicitly capped (2048) on both synthesizer and critic calls to stay within free-tier OpenRouter credit limits.
 
 ---
 
-## 🔗 Agent Communication Diagram
+##  Agent Communication Diagram
 
 The agents communicate through a **shared `MigrationAgentState`** (a `TypedDict`) that flows through the LangGraph graph — each node reads what it needs from state and writes back only its own fields.
 
@@ -158,7 +165,7 @@ A separate **parallel fan-out graph** (`agents/parallel_search.py`) exists for q
 
 ---
 
-## 📚 RAG Pipeline Explanation
+##  RAG Pipeline Explanation
 
 The country-requirements and remittance-advisor agents are grounded using a Retrieval-Augmented Generation pipeline so answers stay tied to actual source documents rather than the model's unverified memory:
 
@@ -170,14 +177,14 @@ The country-requirements and remittance-advisor agents are grounded using a Retr
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 **Streamlit App:**  [https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/](https://migration-advisory-agent-ilzv3dtf62d5tyeb2efjun.streamlit.app/)
 
 
 ---
 
-## ⚠️ Known Limitations
+##  Known Limitations
 
 - **Ephemeral hosting** — the current deployment runs on Google Colab + LocalTunnel, so the public URL changes on every restart and the app goes offline when the Colab session disconnects (idle timeout / max runtime).
 - **Small, sample-only agency dataset** — `valid_agencies.csv` and `invalid_agencies.csv` contain a limited sample of SLBFE agency records (not the full live registry), stored as raw semi-structured text rather than clean tabular data. Agency verification results should always be double-checked at [slbfe.gov.lk](https://slbfe.gov.lk).
@@ -189,7 +196,7 @@ The country-requirements and remittance-advisor agents are grounded using a Retr
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 migration-advisory-agent/
