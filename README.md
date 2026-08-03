@@ -6,9 +6,9 @@ A multi-agent AI advisory system that helps Sri Lankan migrant workers and job s
 
 ##  Developer Information
 
-**Developer Name:** S.M.K.S De Silva
-**Developer Index:** ITBIN-2313-0020
-**Project:** Sri Lanka Foreign Employment Advisory Agent
+* **Developer Name:** S.M.K.S De Silva
+* **Developer Index:** ITBIN-2313-0020
+* **Project:** Sri Lanka Foreign Employment Advisory Agent
 
 ---
 
